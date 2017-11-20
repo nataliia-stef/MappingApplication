@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!--[if lt IE 9]>
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Wildlife centres</title>
+    <link rel="stylesheet" type="text/css" href="Styles/styles.css">
+    <link rel="shortcut icon" href="Images/eagle.png" type="image/x-icon" />
+    <script src="Scripts/script.js"></script>
+ 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD9K838kbovBdg1jzMG4rt50wJ93MPi4as&callback=initMap&libraries=places" async defer></script>
+    <!--google font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,400i,600,600i,700" rel="stylesheet">
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>Wildlife Centres <span class="new-heading"></span></h1>
+            <section id="logo-section">         
+                <p id="slogan">cause we care</p>
+                <img id="logo" src="Images/eagle.png" alt="eagle" />
+            </section>
+        </header>
+
+        <section id="info-side">
+            <p class="info-first-text">Type the place you are interested in</p>
+            <p class="for-example">For example: Ontario, Ontario London etc</p>
+            <input type=text id="userQuery" onkeydown = "keyDown();" />
+            <input type="button" id="btnSearch"  value="Start Search"  onclick="wildlifeCentres();" />
+
+            <section class="info-section" id="displayQuery">
+                <h5 class="main-message">All available wildlife centres will be displayed on the map.
+                    Click on the pin to get the detailed information. </h5>
+
+                <div id="full-info">
+                   <h4 class="orange-title-text" id="place-name"></h4>
+                    <div class="place-details">
+                        <p id="place-address"></p>
+                        <span id="place-rating"></span>
+                        <span id="open-status"></span>
+                    </div>
+                </div>
+            </section>
+            <section id="section-footer">
+                Most organisations function on a volunteer basis and authorized by the Government  <br>
+                <span style="font-size: 9px";>Icon made by Freepik from www.flaticon.com </span>
+            </section>
+
+        </section>
+
+        <section id="map-container">Map</section>
+    </div>
+</body>
+</html>

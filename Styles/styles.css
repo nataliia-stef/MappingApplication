@@ -1,0 +1,253 @@
+header, nav, main, section, footer {display:block;}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Nunito', sans-serif;
+    overflow: auto;
+}
+
+div#container {
+    width: 100%;
+    height: 91.7%;
+    margin: 0 auto;
+}
+
+div header{
+    height: 60px;
+    position: relative;
+    background: #2b5876;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #003648, #2b5876);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #003648, #2b5876); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+}
+
+header h1 {
+    color: #fff;
+    font-weight: normal;
+    line-height: 60px;
+    padding: 0 1%;
+    font-size: 40px;
+    width: 70%;
+    margin: 0;
+}
+
+.new-heading {
+    color: #e59c34;
+    text-transform: capitalize;
+}
+
+section#logo-section {
+    position: absolute;
+    width: 40%;
+    top: 0;
+    right: 0;
+    height: 60px;
+}
+
+p#slogan {
+    color: #fff;
+    font-style: italic;
+    position: absolute;
+    right: 18%;
+    line-height: 27px;
+    font-size: 19px;
+}
+img#logo {
+    position: absolute;
+    right: 3%;
+    top: 10%;
+    height: 80%;
+}
+
+section#info-side {
+    width: 25%;
+    float: left;
+    height: 100%;
+    background-color: #f3f7f8;
+    border-right: solid 2px  #777;
+    position: relative;
+}
+
+.info-first-text {
+    font-size: 18px;
+    text-align: center;
+    margin: 10% 0 0;
+}
+
+.for-example {
+    font-weight: 300;
+    color:  #b2b2b2;
+    font-size: 14px;
+    font-style: italic;
+    margin: 1% 0 5%;
+    padding: 0;
+    text-align: center;
+
+}
+
+#userQuery {
+    width: 80%;
+    height: 28px;
+    margin-left: 10%;
+    padding: 10px;
+    font-size: 18px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+input#btnSearch {
+    height: 30px;
+    margin-top: 3%;
+    margin-left: 10%;
+    margin-bottom: 12%;
+    background-color: #003648;
+    width: 80%;
+    font-size: 16px; 
+    border: 1px solid #666;
+    color: #fff;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input#btnSearch:hover {
+    background-color: #2b5876; 
+}
+
+.black-text {
+    margin: 0;
+    padding: 0 4%;
+}
+
+.main-message {
+    font-weight: 400;
+    font-size: 14px;
+    padding: 3% 4% 1%;
+    margin: 0;
+    text-align: center;
+}
+
+.orange-title-text {
+    color: #e59c34;
+    font-weight: 500;
+    font-size: 18px;
+    padding: 1% 4%;
+    margin: 0;
+}
+
+.info-section {
+    padding-bottom: 3%;
+}
+
+div#full-info {
+    margin-top: 10%;
+    padding: 7% 2%;
+    border-top: 1px solid #e3e4e5;
+    border-bottom: 1px solid #e3e4e5;
+    display: none;
+    line-height:1;
+}
+
+.place-details {
+    padding-left: 4%;
+    margin-top: 0;
+}
+
+.info-section:last-of-type {
+    border-bottom:none;
+}
+
+.info-section p:last-child {
+    color: #003648 ;
+}
+
+section#map-container {
+    height: 100%;
+    width: 74.6%;
+    margin: 0 0 0 19.8%;
+}
+
+section#section-footer {
+    position: absolute;
+    box-sizing: border-box;
+    bottom:  0;
+    text-align: center;
+    background-color: #003648;
+    border-top: 1px solid #999;
+    font-size: 14px;
+    padding: 7% 5%;
+    color: #fff;
+    font-weight: 100;
+}
+
+/*responsive */
+@media screen and (max-width: 800px){
+    div header {
+        height: 89px;
+    }
+    
+    section#info-side {
+        width: 100%;
+        float: none;
+        padding-top: 0.1%;
+    }
+    
+    section#map-container {
+        width: 100%;
+        margin: 0;
+    }
+    
+    header h1 {
+        padding-top: 10px;
+        line-height: 40px;
+    }
+    .new-heading{
+        display: block;
+        height: 25px;
+    }
+    p#slogan {
+        display: none;
+    }
+    
+    img#logo {
+        position: absolute;
+        right: 3%;
+        top: 10%;
+        height: 130%;
+    }
+
+    .info-first-text {
+        margin: 3%;
+    }
+
+    .main-message {
+        padding: 1%;
+    }
+
+    input#btnSearch {
+        margin-bottom: 4%;
+    }
+
+    div#full-info {
+        margin-top: 4%;
+        padding-top: 1%;
+    }
+
+    section#section-footer {
+        padding: 2%;
+        width: 100%;
+    }   
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 35px;
+    }
+    p#slogan {
+        display: none;
+    }
+}
+
+
+
