@@ -4,25 +4,25 @@
  *
  * A College project, mapping application that shows you the existing wildlife centres depending on your search query
  * It also shows your current location
- * The application uses Google Maps and Google Places Srevices
+ * The application uses Google Maps and Google Places API
  *
  * **/
 
 
 // create some basic global variables
-    var map = {};
-    var markers = [];
-    var place = [];
-    var globalPos, infoWindow, image, query, userQuery, bounds;
+    let map = {};
+    let markers = [];
+    let place = [];
+    let globalPos, infoWindow, image, query, userQuery, bounds;
 
 
     // onload event handler to create the initial map and map object
     function initMap() {
         // create a container to draw the map inside a <div>
-        var mapCanvas = (document.getElementById("map-container"));
+        const mapCanvas = (document.getElementById("map-container"));
 
         // define some map properties
-        var mapOptions = {
+        const mapOptions = {
             center: {lat: 43.011987, lng: -81.200276},
             zoom: 7
         };
@@ -55,8 +55,8 @@
     // helper function for getLocation()
     function showPosition(position) {
         globalPos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
         };
 
         //open infoWindow
@@ -69,10 +69,7 @@
     }
 
 
-    // this event handler demonstrates Google Places service based on what you have typed in the search.
-    // In my case It doesn't depend on your current position, however I am planning to incorporate this feature in future - either search for
-    // wildlife centres near you (for instance, you find an injured groundhog and want to get to the nearest centre)
-    // or just to search for them around the world
+    // this event handler demonstrates the use of Google Places API based on what you have typed in the search.
 
     function wildlifeCentres() {
 
@@ -89,7 +86,7 @@
             document.querySelector(".new-heading").textContent = userQuery;
 
             // create a request object
-            var request = {
+            let request = {
                 placeId: place.place_id,
                 // location: globalPos,
                 // radius: '100000',
@@ -99,7 +96,7 @@
             };
 
             // create the service object
-            var service = new google.maps.places.PlacesService(map);
+            const service = new google.maps.places.PlacesService(map);
 
             // perform a search based on the request object and callback
             service.textSearch(request, callback);
@@ -107,7 +104,7 @@
             // this is an inner callback function as referenced immediately above
             function callback(results, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    for (var i = 0; i < results.length; i++){
+                    for (let i = 0; i < results.length; i++){
                         addMarker(results[i]);
                     }
                 }
@@ -126,7 +123,7 @@
         // create a marker (pin) object, image - is a new pin icon (marker object property)
         image = 'Images/owl.png';
 
-        var marker = new google.maps.Marker({
+        let marker = new google.maps.Marker({
             position: place.geometry.location,
             map: map,
             animation: google.maps.Animation.DROP,
@@ -173,7 +170,7 @@
 
         //use fitBound() to covel all visible markers
         bounds = new google.maps.LatLngBounds();
-        for (var i = 0; i < markers.length; i++) {
+        for (let i = 0; i < markers.length; i++) {
             bounds.extend(markers[i].getPosition());
         }
 
@@ -183,7 +180,7 @@
 
     // display all the marker objects (pins) in the marker array
     function displayAllMarkers(map) {
-        for (var i = 0; i < markers.length; i++) {
+        for (let i = 0; i < markers.length; i++) {
             markers[i].setMap(map);
         }
     }
